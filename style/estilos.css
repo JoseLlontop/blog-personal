@@ -1,0 +1,183 @@
+/*Para que para la pagina sea RESPONSIVE los width debe ser con porcentaje*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /*Para que dentro del tañano de los div tambien se considere el padding*/
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background: #4a465b;
+}
+
+/*-----------------------------------------------------------------------------*/
+
+.contenedor-pagina {
+    /*No coloco 100% para que tenga un espaciado y sea mas comodo para el usuario*/
+    /*El contendor de la pagina va a abarcar un 90% de la pantalla en las pantallas pequeñas*/
+    width: 90%;
+    /*Ancho maximo para pantallas grandes*/
+    max-width: 1000px;
+    /*Centrado del contenedor*/
+    margin: 20px auto;
+    /*Complemento si mis hijos utilizan flotante*/
+    overflow: hidden;
+}
+
+/*-----------------------------------------------------------------------------*/
+header {
+    background: #fff;
+}
+
+header nav {
+    width: 100%;
+}
+
+header nav ul {
+    /*Sacarle la enumeracion o las viñetas*/
+    list-style: none;
+    width: 100%;
+}
+
+header nav ul li {
+    /*Quito que los elementos li abarquen el 100% para que esten uno al lado del otro*/
+    display: inline-block;
+}
+
+header nav ul li a {
+    /*Para modificar sus propiedades como padding transformo a block*/
+    display: block;
+    padding: 15px 20px;
+    /*Color del texto*/
+    color: #000;
+    /*Quito el subrayado*/
+    text-decoration: none;
+}
+
+header nav ul li a:hover { 
+    background: #000;
+    color: #fff;
+}
+/*-----------------------------------------------------------------------------*/
+
+.main {
+    width: 70%;
+    background: #fff;
+    /*Va a compartir espacio con el aside*/
+    float: left;
+}
+
+.main .imagen {
+    width: 100%;
+    
+}
+
+.main .imagen img {
+    /*Que abarque el 100% de su contenedor, que es main que ocupa un 70% de su contenedor contenedor-pagina*/
+    width: 100%;
+    /*Eliminar margenes de la imagen*/
+    vertical-align: top;
+}
+
+.main .posts {
+    /*Margen interno entre el texto y el recuadro*/
+    padding: 40px;
+}
+
+.main .posts article h2 {
+    /*Margen exterior hacia abajo para que se separe del texto*/
+    margin-bottom: 20px;
+    color: #424242;
+}
+
+.main .posts article p {
+    margin-bottom: 15px;
+    /*Interlineado*/
+    line-height: 27px;
+}
+/*-----------------------------------------------------------------------------*/
+
+aside {
+    width: 30%;
+    background: #161f26;
+    padding: 20px;
+    color: #fff;
+    /*Va a compartir espacio con el main*/
+    float: right;
+}
+
+aside .widget {
+    margin-bottom: 20px;
+}
+
+aside .widget .titulo {
+    color: #ff8000;
+    /*Linea abajo del titulo*/
+    border-bottom: 1px solid #ff8000;
+    /*Margen externo con respecto al otro elemento es decir el texto*/
+    margin-bottom: 10px;
+}
+
+aside .widget ul {
+    /*Sacarle la enumeracion o las viñetas*/
+    list-style: none;
+}
+
+aside .widget ul li {
+    /*Linea abajo*/
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+    /*Borde interno entre el texto y la linea*/
+    padding: 10px 0;
+}
+
+aside .widget ul li a { 
+    /*Quito el subrayado*/
+    text-decoration: none;
+    color: #fff;
+}
+
+aside .widget ul li a:hover { 
+    color: #8f8f8f;
+}
+
+aside .widget p {
+    line-height: 27px;
+}
+
+/*-----------------------------------------------------------------------------*/
+
+footer {
+    /*Le pongo 70% para que este alineado con el articulo*/
+    width: 70%;
+    background: #000;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    /*Asegura de que no haya ningún elemento flotante, es decir empieza en una nueva linea*/
+    clear: both;
+}
+
+/*-----------------------------------------------------------------------------*/
+
+/*DISEÑO RESPONSIVE*/
+
+/*Cuando la pantalla sea de 800px se van a ejecutar los siguentes estilos:*/
+@media screen and (max-width: 800px) {
+    .main {
+        /*antes tenia 70% ahora ya no va a compartir el espacio con el aside*/
+        width: 100%;
+    }
+
+    aside {
+        /*antes tenia 30% ahora ya no va a compartir el espacio con el main*/
+        width: 100%;
+    }
+
+    footer {
+        /*Antes tenia el mismo tamaño del main*/
+        width: 100%;
+    }
+}
